@@ -22,11 +22,37 @@
     <div class="login-form">
         
         <form id="loginform">
-            <input type="text" name="email" placeholder="email adresse" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <input type="submit" id="opretbruger">
+            <input type="text" name="email" placeholder="email adresse" id="email" required>
+            <input type="password" name="password" placeholder="Password" id ="password"required>
+            <button type="button" id="opretbruger" onclick="login()"> login her </button>
         </form>
     </div>
-    <script src="login.js"></script>
+    <script type="text/javascript"> 
+       
+       var userArr = [
+            { 
+                email: "sille",
+                password: "123"
+            }
+        ]
+
+            //tjekker om brugeren findes når knappen trykkes på. 
+        function login () {
+            var email = document.getElementById("email").value
+            var password = document.getElementById("password").value
+
+            for (let i=0; i < userArr.length; i++) {
+                if(email == userArr[i].email && password == userArr[i].password) {
+                    console.log(email + "is logged in")
+
+                } else {
+                    console.log('incorrect username')
+                }
+            }
+        } 
+        document.getElementById("opretbruger").onclick = function () {
+            location.href = 'http://localhost:3000/varer.html'; // efter login sender den dig til varer siden. 
+    };
+    </script>
 </body>
 </html>

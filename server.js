@@ -1,4 +1,4 @@
-const express = require ('express');
+const express = require('express');
 const app = express(); //gør vi kan kalde metoderne (get, put osv). 
 const port = 3000; 
 const cors = require('cors')
@@ -52,7 +52,6 @@ app.put('/produktnavnarray', (req, res) => {
                     res.status(200).json({
                 msg: "Din vare er opdateret"
                 })
-                console.log('hej')
             })
         }
     }
@@ -77,4 +76,24 @@ app.delete('/produktnavnarray/:id', (req, res) => {
     }    
 })
 
+
+
+/*app.post('/authenticate', function (request, response) {
+	let { username, password } = request.body;
+
+	if (username && password) {
+		if (database.checkuserandpassword(username, password)) {
+			request.session.loggedin = true;
+			request.session.username = username;
+			response.redirect('/views/homepage.html');
+		}
+		else {
+			response.status(404).send('Incorrect Username and/or Password!');
+		}
+		response.end();
+	}
+	else {
+		response.status(404).send('/views/login.html');
+	}
+});*/
 
