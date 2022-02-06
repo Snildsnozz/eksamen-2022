@@ -1,11 +1,9 @@
-var userArr = [
+/*var userArr = [
     { 
         email: "sille",
         password: "123"
     }
 ]
-
-
 function login () {
     var email = document.getElementById("email").value
     var password = document.getElementById("password").value
@@ -16,4 +14,8 @@ function login () {
             
         }
     } 
-}
+}*/
+
+
+
+

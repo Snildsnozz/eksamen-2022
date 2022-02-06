@@ -75,25 +75,18 @@ app.delete('/produktnavnarray/:id', (req, res) => {
         }
     }    
 })
+app.post('/opretBrugerId', (req, res) => {
 
+    let dataArray = JSON.parse(fs.readFileSync('data/user.json'))
 
+    dataArray.push(req.body)   //nu hvor det er et array kan man bruge .push. husk tomt array i json filen så den kan bruge array funktionerne. 
 
-/*app.post('/authenticate', function (request, response) {
-	let { username, password } = request.body;
+    fs.writeFile('data/user.json', JSON.stringify(dataArray, null, 4), err => {
+        if(err) res.send(err) //hvis der er en error, sender det error tilbage til brugeren. 
+            res.send({
+        msg: "Din bruger er tilføjet"
+        }) //bliver det en succes sender den beskeden tilbage. 
+    })
+})
 
-	if (username && password) {
-		if (database.checkuserandpassword(username, password)) {
-			request.session.loggedin = true;
-			request.session.username = username;
-			response.redirect('/views/homepage.html');
-		}
-		else {
-			response.status(404).send('Incorrect Username and/or Password!');
-		}
-		response.end();
-	}
-	else {
-		response.status(404).send('/views/login.html');
-	}
-});*/
-
+	

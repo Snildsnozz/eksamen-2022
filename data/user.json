@@ -1,6 +1,8 @@
 [
-    { 
-    "email": "sille",
-    "password": "123"
-    }   
+    {
+        "id": "idkzbhga4p",
+        "navn": "gej",
+        "mail": "sillerishojjensen@hotmail.com",
+        "kode": "123"
+    }
 ]
