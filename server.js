@@ -76,3 +76,5 @@ app.delete('/produktnavnarray/:id', (req, res) => {
         }
     }    
 })
+
+
