@@ -1,0 +1,1 @@
+var data = "hej jeg har lavet en ny ting"
