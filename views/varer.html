@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="homepage.css">
+        <link rel="javascript" href="homepage.html">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Forside DBA</title>
+    </head>
+  <body>
+    <h1>Den endnu mere Blå Avis</h1>
+    <div class="menuBar">
+        <a href="homepage.html">Forside</a>
+        <a href="login.html"> Login</a>
+        <a href="logOut.html"> Log ud </a>
+        <a href="opretBruger.html"> Opret bruger</a>
+        <a href="updateUser.html"> Opdater bruger</a>
+        <a href="varer.html"> Mine produkter</a>
+    </div>
+  <h1>Se en liste over alle dine produkter</h1>
+    
+      
+      <div id="container">
+            <button id="hentAlleProdukter"> Tryk for alle produkter </button>
+            <table id="seeall"></table>
+            
+    </div>
+    <br>
+
+  <div id="alleprodukter">
+  <h1>Tilføj, opdater eller slet produkter</h1>
+  </div>
+  <br>
+    <form>
+      <input type="text" id="produktnavnarray" placeholder="Produkt navn">
+      <input type="number" id="pris" placeholder="pris på varen">
+      <select id="kategori"><option value="Tøj">Tøj</option>
+      <option value="Møbler">Møbler</option> 
+      <option value="Sko">Sko</option></select> 
+      <input type="file" name="Billede" id="billedeid">
+      <button id="submit"> submit </button>
+    </form>
+    
+    <br>
+
+    <form>
+      <input type="text" id="opdaterProduktNavn" placeholder="opdater produkt navn">
+      <input type="number" id="opdaterpris" placeholder="opdater pris">
+      <input type="text" id="opdaterProduktId" placeholder="id på opdater produkt">
+      <button id="opdater"> Opdater produkt </button>
+    </form>
+
+    <br>
+    <form> 
+      <input type="text" id="sletproduktid" placeholder="id på slet produkt">
+      <button id="slet"> Slet </button>
+    </form>
+    <br>
+
+    <form>
+      <button id="møblerKnap">Se alle møbler </button>
+    </form>
+    <br>
+
+    <div id="hentallesko">
+      <button id="skoKnap">Se alle sko </button>
+      <table id="seAlleSko"></table>
+    </div>
+    <br>
+
+    <form>
+      <button id="tøjKnap">Se alt tøj </button>
+    </form>
+
+	<script src="varer.js"></script>
+  </body>
+</html>
