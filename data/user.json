@@ -1,8 +1,14 @@
 [
     {
-        "id": "idkzbhga4p",
-        "navn": "gej",
+        "id": "idkzbp0bzu",
+        "navn": "Sille",
         "mail": "sillerishojjensen@hotmail.com",
         "kode": "123"
+    },
+    {
+        "id": "idkzbp0pj9",
+        "navn": "Sara",
+        "mail": "sara@hotmail.com",
+        "kode": "345"
     }
 ]

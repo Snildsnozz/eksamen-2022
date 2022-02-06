@@ -75,6 +75,7 @@ app.delete('/produktnavnarray/:id', (req, res) => {
         }
     }    
 })
+
 app.post('/opretBrugerId', (req, res) => {
 
     let dataArray = JSON.parse(fs.readFileSync('data/user.json'))
@@ -89,4 +90,41 @@ app.post('/opretBrugerId', (req, res) => {
     })
 })
 
-	
+app.put('/updateBrugerId', (req, res) => {
+
+    let dataArray = JSON.parse(fs.readFileSync('data/user.json'))
+
+    for (let i = 0; i < dataArray.length; i++) {
+
+        if(dataArray[i].id == req.body.id) {
+            dataArray[i].navn = req.body.navn
+            dataArray[i].kode = req.body.kode
+            dataArray[i].mail = req.body.mail
+            fs.writeFile('data/user.json', JSON.stringify(dataArray, null, 4), err => {
+                if(err) res.send(err)
+                    res.status(200).json({
+                msg: "Din bruger er opdateret"
+                })
+            })
+        }
+    }
+})
+
+app.delete('/sletBrugerId/:id', (req, res) => {
+
+    let dataArray = JSON.parse(fs.readFileSync('data/user.json'))
+
+    for (let i = 0; i < dataArray.length; i++) {
+
+        if(dataArray[i].id == req.params.id) {
+            dataArray.splice(i, 1) //sletter en bruger af gangen. 
+
+            fs.writeFile('data/user.json', JSON.stringify(dataArray, null, 4), err => {
+                if(err) res.send(err)
+                    res.status(200).json({
+                msg: "Din vare er slettet"
+                })
+            })
+        }
+    }    
+})

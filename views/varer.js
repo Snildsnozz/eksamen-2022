@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
             produkt: produktnavn,
             price: pris,
             category: kategori
-
         } 
         
         
