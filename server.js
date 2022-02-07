@@ -136,7 +136,8 @@ router.post('/views/login', (req, res) => {
     const user = {email: req.body.email, password: req.body.password}
 
     let dataArray = JSON.parse(fs.readFileSync('data/user.json'))
-    let found = dataArray.find((u) => user.email == u.mail)
+    let found = dataArray.find((u) => user.email == u.mail) 
+    //finder brugeren i databasen og tjekker om den stemmer med den opgivet mail. 
 
     if (found) {
         if(user.password == found.kode) {
