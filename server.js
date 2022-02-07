@@ -133,11 +133,13 @@ app.delete('/sletBrugerId/:id', (req, res) => {
 })
 
 router.post('/views/login', (req, res) => {
-    const user = new user(null, req.body.email, req.body.password);
-    const found = database.findUser(user);
+    const user = {email: req.body.email, password: req.body.password}
+
+    let dataArray = JSON.parse(fs.readFileSync('data/user.json'))
+    let found = dataArray.find((u) => user.email == u.mail)
 
     if (found) {
-        if(user.password == found.password) {
+        if(user.password == found.kode) {
             res.status(200).send(found);
         } else {
             res.status(401).send(false);
