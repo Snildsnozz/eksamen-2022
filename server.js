@@ -3,10 +3,13 @@ const app = express(); //gør vi kan kalde metoderne (get, put osv).
 const port = 3000; 
 const cors = require('cors')
 const fs = require('fs');
+const router = express.Router();
 
 app.use(cors())
 app.use(express.json()) 
 app.use(express.static('./views'));
+app.use("/", router);
+
 
 //app.use('/users', userController);
 
@@ -128,3 +131,18 @@ app.delete('/sletBrugerId/:id', (req, res) => {
         }
     }    
 })
+
+router.post('/views/login', (req, res) => {
+    const user = new user(null, req.body.email, req.body.password);
+    const found = database.findUser(user);
+
+    if (found) {
+        if(user.password == found.password) {
+            res.status(200).send(found);
+        } else {
+            res.status(401).send(false);
+        }
+    } else {
+        res.status(404).send(false)
+    }
+});

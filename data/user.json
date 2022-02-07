@@ -10,5 +10,11 @@
         "navn": "Sara",
         "mail": "sara@hotmail.com",
         "kode": "345"
+    },
+    {
+        "id": "idkzch1ild",
+        "navn": "Peter",
+        "mail": "peter@mail.com",
+        "kode": "peter"
     }
 ]
