@@ -1,3 +1,6 @@
+if (localStorage.getItem('user')) {
+    location.href = '/views/varer.html'
+} //hvis du er logget ind redirecter den til varer.html. 
 
 document.addEventListener("DOMContentLoaded", function () {
     let login = document.getElementById('loginform')

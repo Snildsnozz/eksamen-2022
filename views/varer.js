@@ -1,3 +1,6 @@
+if (!localStorage.getItem('user')) {
+    location.href = '/views/login.html'
+} 
 document.addEventListener("DOMContentLoaded", function () {
 
     let submit = document.getElementById("submit") 

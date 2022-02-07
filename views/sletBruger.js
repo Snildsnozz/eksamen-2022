@@ -1,11 +1,14 @@
+if (!localStorage.getItem('user')) {
+    location.href = '/views/login.html'
+} 
 document.addEventListener("DOMContentLoaded", function () {
-
+    
     let slet = document.getElementById("sletbruger")
 
         slet.addEventListener("click", (e) => {
             e.preventDefault();
 
-            let uniq = document.getElementById('sletBrugerId').value;
+            let uniq = JSON.parse(localStorage.getItem('user')).id
             
             
         fetch('http://localhost:3000/sletBrugerId/' + uniq, {
@@ -15,8 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
             },
         }).then(response => response.json())
         .then(data => {
-            console.log(data)
-            alert("Sucess:" + data.msg)
+            localStorage.removeItem('user') //logger brugeren ud. 
+            location.href = '/views/login.html' //redirecter til login efter slet. 
         })
         .catch((err) => {
             console.log('Error:', err)

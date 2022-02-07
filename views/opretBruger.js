@@ -1,3 +1,7 @@
+if (localStorage.getItem('user')) {
+    location.href = '/views/varer.html'
+} //redirecter til varer.html. har du en bruger skal du ikke kunne lave en mere. 
+
 document.addEventListener("DOMContentLoaded", function () {
 
     let opret = document.getElementById("opretbruger") 
