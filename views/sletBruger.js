@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
             },
         }).then(response => response.json())
         .then(data => {
-            localStorage.removeItem('user') //logger brugeren ud. 
+            localStorage.removeItem('user') //logger brugeren ud/sletter brugeren fra localstorage. 
             location.href = '/views/login.html' //redirecter til login efter slet. 
         })
         .catch((err) => {

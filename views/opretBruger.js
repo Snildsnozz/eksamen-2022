@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let email = document.getElementById('email').value;
         let password = document.getElementById('password').value;
 
-        var uniq = 'id' + Date.now().toString(36)//lavet et unikt id for hver produkt. 
+        var uniq = 'id' + Date.now().toString(36)//lavet et unikt id for hver bruger.  
         let nybruger = {
             id: uniq, 
             navn: brugernavn,
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
                'Content-Type': 'application/json'
            },
             //det under er det, som bliver sendt til serveren. 
-           body: JSON.stringify(nybruger) //body sættes til at være den stringifiet variable, altså nytprodukt.  
+           body: JSON.stringify(nybruger) //body sættes til at være den stringifiet variable, altså nybruger.  
        }).then(response => response.json()) /* laver en response inde i then - response.json gør at det vi får tilbage fra serveren også er json. 
         Res.json laver det om til det det var inden vi stringifiede det. */
        .then(data => { 

@@ -132,7 +132,7 @@ app.delete("/sletBrugerId/:id", (req, res) => {
         (err) => {
           if (err) res.send(err);
           res.status(200).json({
-            msg: "Din vare er slettet",
+            msg: "Din bruger er slettet",
           });
         }
       );
@@ -141,20 +141,20 @@ app.delete("/sletBrugerId/:id", (req, res) => {
 });
 
 router.post("/views/login", (req, res) => {
-  const user = { email: req.body.email, password: req.body.password };
+  const user = { email: req.body.email, password: req.body.password }; //får bodyen fra vores req og sætter ind i user obejkt. 
 
-  let dataArray = JSON.parse(fs.readFileSync("data/user.json"));
+  let dataArray = JSON.parse(fs.readFileSync("data/user.json")); //læser hele user filen og laver det til et array, der består af bruger objekter. 
   let found = dataArray.find((u) => user.email == u.mail);
-  //finder brugeren i databasen og tjekker om den stemmer med den opgivet mail.
+  //finder det element, der har samme mail, som den der kommer med i requestet. 
 
-  if (found) {
-    if (user.password == found.kode) {
-      res.status(200).send(found);
+  if (found) { //findes brugeren? 
+    if (user.password == found.kode) { //brugeren fandtes, er det det rigtige password.
+      res.status(200).send(found); //brugeren fandet kodeordet er korrekt, sender brugeren tilbage. 
     } else {
-      res.status(401).send(false);
+      res.status(401).send(false); //brugeren fandtes koden var forkert, sender fejl.
     }
   } else {
-    res.status(404).send(false);
+    res.status(404).send(false); //brugeren findes ikke, sender fejl. 
   }
 });
 
