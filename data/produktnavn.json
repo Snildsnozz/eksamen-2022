@@ -4,5 +4,11 @@
         "produkt": "sille 123",
         "price": "250",
         "category": "Møbler"
+    },
+    {
+        "id": "testid",
+        "produkt": "sille 123",
+        "price": "250",
+        "category": "Møbler"
     }
 ]
