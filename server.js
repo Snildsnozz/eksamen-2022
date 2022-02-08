@@ -150,3 +150,4 @@ router.post('/views/login', (req, res) => {
     }
 });
 
+module.exports = app; 

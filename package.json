@@ -4,7 +4,7 @@
   "description": "",
   "main": "database.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha tests --exit",
     "start": "node server.js"
   },
   "repository": {
@@ -18,8 +18,12 @@
   },
   "homepage": "https://github.com/Snildsnozz/eksamen-2022#readme",
   "dependencies": {
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
     "cors": "^2.8.5",
     "express": "^4.17.2",
-    "fs": "^0.0.1-security"
+    "fs": "^0.0.1-security",
+    "joi": "^17.6.0",
+    "mocha": "^9.2.0"
   }
 }
