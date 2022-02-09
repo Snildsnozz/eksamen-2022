@@ -10,5 +10,11 @@
         "produkt": "sille 123",
         "price": "250",
         "category": "Møbler"
+    },
+    {
+        "id": "idkzfoqvee",
+        "produkt": "stol",
+        "price": "100",
+        "category": "Møbler"
     }
 ]

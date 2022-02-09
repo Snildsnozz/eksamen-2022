@@ -37,7 +37,6 @@ app.post("/produktnavnarray", (req, res) => {
 
 app.get("/produktnavnarray", (req, res) => {
   fs.readFile("data/produktnavn.json", function (err, data) {
-    //response.sendFile(path.join(__dirname + '/views/varer.html'));
     if (err) res.send(err);
     res.send(data);
   });
@@ -47,8 +46,9 @@ app.put("/produktnavnarray", (req, res) => {
   let dataArray = JSON.parse(fs.readFileSync("data/produktnavn.json"));
 
   for (let i = 0; i < dataArray.length; i++) {
-    if (dataArray[i].id == req.body.id) {
-      dataArray[i].produkt = req.body.produkt;
+    if (dataArray[i].id == req.body.id) { //hvis der findes et match
+      dataArray[i].produkt = req.body.produkt; 
+      //tildel værdien af req.body.propdukt til dataArray[i]
       fs.writeFile(
         "data/produktnavn.json",
         JSON.stringify(dataArray, null, 4),

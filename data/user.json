@@ -4,5 +4,11 @@
         "navn": "hej",
         "mail": "hej@mail.com",
         "kode": "sille"
+    },
+    {
+        "id": "idkzfopu0h",
+        "navn": "Peter",
+        "mail": "jacob",
+        "kode": "123456"
     }
 ]

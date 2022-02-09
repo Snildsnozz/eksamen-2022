@@ -49,7 +49,8 @@ document.addEventListener("DOMContentLoaded", function () {
         let produktnavn = document.getElementById('opdaterProduktNavn').value;
         let uniq = document.getElementById('opdaterProduktId').value;
         let pris = document.getElementById("opdaterpris").value;
-        
+        //får værdien inde i objektet.  
+
         let updatedprodukt = {
             id: uniq, 
             produkt: produktnavn,
@@ -60,11 +61,14 @@ document.addEventListener("DOMContentLoaded", function () {
        fetch('http://localhost:3000/produktnavnarray', {
            method: "PUT",
            headers: {
-               'Content-Type': 'application/json'
+               'Content-Type': 'application/json'  
+               // serveren ved nu det der kommer er et json objekt. 
            },
            //det under er det som bliver sendt til serveren. 
            body: JSON.stringify(updatedprodukt)
        }).then(response => response.json())
+       /* laver en response inde i then - response.json gør at det vi får tilbage fra serveren også er json. 
+        Res.json laver det om til det det var inden vi stringifiede det. */
        .then(data => {
            console.log(data)
            alert("Sucess:" + data.msg)
@@ -132,7 +136,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 </tr>
                 `; //henter værdierne fra hvert element. 
 
-            }); //det der står oppe i linje 126-129 er det mine "navne" i JSON filen, hvor alle varerne er. Husk at brug dem. 
+            }); 
         })
     });
 }); 
