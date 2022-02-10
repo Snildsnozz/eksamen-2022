@@ -16,5 +16,29 @@
         "produkt": "stol",
         "price": "100",
         "category": "Møbler"
+    },
+    {
+        "id": "testid",
+        "produkt": "sille 123",
+        "price": "250",
+        "category": "Møbler"
+    },
+    {
+        "id": "testid",
+        "produkt": "sille 123",
+        "price": "250",
+        "category": "Møbler"
+    },
+    {
+        "id": "idkzgyevr3",
+        "produkt": "oluf",
+        "price": "13",
+        "category": "Sko"
+    },
+    {
+        "id": "idkzgygw34",
+        "produkt": "oluf",
+        "price": "12",
+        "category": "Sko"
     }
 ]
